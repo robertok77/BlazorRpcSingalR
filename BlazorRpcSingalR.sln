@@ -3,11 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorRpcSingalR.Server", "BlazorRpcSingalR\Server\BlazorRpcSingalR.Server.csproj", "{682E5394-3E05-4401-B949-B9AB9F8C2CF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorRpcSingalR.Server", "BlazorRpcSingalR\Src\Server\BlazorRpcSingalR.Server.csproj", "{682E5394-3E05-4401-B949-B9AB9F8C2CF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorRpcSingalR.Client", "BlazorRpcSingalR\Client\BlazorRpcSingalR.Client.csproj", "{14920539-24F6-4456-8E7E-4C351B646406}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorRpcSingalR.Client", "BlazorRpcSingalR\Src\Client\BlazorRpcSingalR.Client.csproj", "{14920539-24F6-4456-8E7E-4C351B646406}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorRpcSingalR.Shared", "BlazorRpcSingalR\Shared\BlazorRpcSingalR.Shared.csproj", "{E8A7776D-4DB0-4EE1-96EE-4403E6E278AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorRpcSingalR.Shared", "BlazorRpcSingalR\Src\Shared\BlazorRpcSingalR.Shared.csproj", "{E8A7776D-4DB0-4EE1-96EE-4403E6E278AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{6F1F998D-8A4B-499A-8227-355FC20E77AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{18BB62E9-1DBB-4A43-AC36-C2A8A49A8FCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorRpcSignalR.Domain.UnitTests", "BlazorRpcSingalR\Tests\BlazorRpcSignalR.Domain.UnitTests\BlazorRpcSignalR.Domain.UnitTests.csproj", "{88C3A3B6-AE65-4C1A-A78D-D7E20CA20903}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorRpcSignalR.IntegrationTests", "BlazorRpcSingalR\Tests\BlazorRpcSignalR.IntegrationTests\BlazorRpcSignalR.IntegrationTests.csproj", "{9BDBAD87-7F18-4417-9F02-F29BE84C4446}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +35,24 @@ Global
 		{E8A7776D-4DB0-4EE1-96EE-4403E6E278AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8A7776D-4DB0-4EE1-96EE-4403E6E278AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8A7776D-4DB0-4EE1-96EE-4403E6E278AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88C3A3B6-AE65-4C1A-A78D-D7E20CA20903}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88C3A3B6-AE65-4C1A-A78D-D7E20CA20903}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88C3A3B6-AE65-4C1A-A78D-D7E20CA20903}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88C3A3B6-AE65-4C1A-A78D-D7E20CA20903}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BDBAD87-7F18-4417-9F02-F29BE84C4446}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BDBAD87-7F18-4417-9F02-F29BE84C4446}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BDBAD87-7F18-4417-9F02-F29BE84C4446}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BDBAD87-7F18-4417-9F02-F29BE84C4446}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{682E5394-3E05-4401-B949-B9AB9F8C2CF7} = {6F1F998D-8A4B-499A-8227-355FC20E77AD}
+		{14920539-24F6-4456-8E7E-4C351B646406} = {6F1F998D-8A4B-499A-8227-355FC20E77AD}
+		{E8A7776D-4DB0-4EE1-96EE-4403E6E278AB} = {6F1F998D-8A4B-499A-8227-355FC20E77AD}
+		{88C3A3B6-AE65-4C1A-A78D-D7E20CA20903} = {18BB62E9-1DBB-4A43-AC36-C2A8A49A8FCB}
+		{9BDBAD87-7F18-4417-9F02-F29BE84C4446} = {18BB62E9-1DBB-4A43-AC36-C2A8A49A8FCB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4075EE4E-8FBB-48DB-8FA0-5BA64F175643}

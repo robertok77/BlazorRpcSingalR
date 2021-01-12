@@ -1,11 +1,14 @@
+using System;
+using BlazorRpcSingalR.Server.Domain;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System.Linq;
+using BlazorRpcSingalR.Server.Hubs;
+using BlazorRpcSingalR.Shared.Contract;
+using BlazorRpcSingalR.Shared.Domain;
+using BlazorRpcSingalR.Shared.Infrastructure.EventAggregator;
 
 namespace BlazorRpcSingalR.Server
 {
@@ -22,9 +25,12 @@ namespace BlazorRpcSingalR.Server
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddSignalR();
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddSingleton<IRpcCaller<RpcHub<PrimeParam, PrimeRet>, PrimeParam, PrimeRet>, RpcCaller<RpcHub<PrimeParam, PrimeRet>, PrimeParam, PrimeRet>>();
+            services.AddSingleton<IEventAggregator, EventAggregator>();
+            services.AddTransient<Func<PrimeNumbersPersistance>>(provider => () => new PrimeNumbersPersistance(2, 10_000, new int[] { }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +58,7 @@ namespace BlazorRpcSingalR.Server
             {
                 endpoints.MapRazorPages();
                 endpoints.MapControllers();
+                endpoints.MapHub<RpcHub<PrimeParam, PrimeRet>>(HubConnectionConst.PrimesNoEndpoint);
                 endpoints.MapFallbackToFile("index.html");
             });
         }

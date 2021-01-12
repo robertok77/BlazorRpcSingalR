@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace BlazorRpcSingalR.Shared
+namespace BlazorRpcSingalR.Shared.Domain
 {
     public class WeatherForecast
     {

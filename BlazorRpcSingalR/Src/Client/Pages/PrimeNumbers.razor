@@ -1,0 +1,16 @@
+﻿@page "/primeNumbers"
+
+<h3>This demo shows RPC calls from server to client. </h3>
+
+<p>Each time client starts, it receives from server maximum value to find prime numbers,</p>
+<p>then calculates them locally and send result back to server.</p>
+<p>Another client gets higher limit with calculated primes to find next range of prime numbers</p>
+<hr>
+<p>The top 5 prime numbers found: </p>
+<div class="d-flex flex-wrap align-content-start">
+
+    @foreach (var prime in _primeNumbers.OrderByDescending(x => x).Take(5))
+    {
+        <div class="p-2 border">@prime</div>
+    }
+</div>
