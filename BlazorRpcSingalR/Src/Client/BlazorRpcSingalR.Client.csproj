@@ -15,4 +15,9 @@
     <ProjectReference Include="..\Shared\BlazorRpcSingalR.Shared.csproj" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <BlazorEnableTimeZoneSupport>false</BlazorEnableTimeZoneSupport>
+  </PropertyGroup>
+
 </Project>
