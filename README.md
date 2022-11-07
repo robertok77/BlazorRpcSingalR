@@ -12,17 +12,18 @@ Run the application and go to Primes page.
 
 _Three clients are generating primes independently:_
 
-![rpc01](https://user-images.githubusercontent.com/14275269/200368299-e0132135-6e45-477c-9d79-f5640747764d.jpg)
+
+![rpc01 - Copy - Copy](https://user-images.githubusercontent.com/14275269/200371058-df4b038e-b66d-4ada-a5dd-d6e2ea074164.jpg)
 <br/>
 _Pic 1. 1st client display top 5 primes from 2 to 10_000_
 <br/>
 <br/>
-![rpc02](https://user-images.githubusercontent.com/14275269/200368549-aa3ca146-7441-4b4e-96f6-47f65c057d96.jpg)
+![rpc02 - Copy - Copy](https://user-images.githubusercontent.com/14275269/200371354-62ac4c29-aa7a-492c-87fe-0302cf3fc7c3.jpg)
 <br/>
 _Pic 2. 2nd client display top 5 primes from 10_000 to 20_000_
 <br/>
 <br/>
-![rpc03](https://user-images.githubusercontent.com/14275269/200368840-848447eb-eb27-4d04-a5dc-f2b856279d01.jpg)
+![rpc03 - Copy - Copy](https://user-images.githubusercontent.com/14275269/200371392-c3764944-8006-409a-8f4c-a5480c118737.jpg)
 <br/>
 _Pic 3. 3rd client display top 5 primes from 20_000 to 30_000_
 <br/>
