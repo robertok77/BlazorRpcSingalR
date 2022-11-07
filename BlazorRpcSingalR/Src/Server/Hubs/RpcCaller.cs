@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Threading.Tasks;
-using BlazorRpcSingalR.Shared;
+using BlazorRpcSingalR.Server.Contract;
 using BlazorRpcSingalR.Shared.Contract;
 using Microsoft.AspNetCore.SignalR;
 

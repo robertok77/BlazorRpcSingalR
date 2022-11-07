@@ -1,14 +1,17 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
+using BlazorRpcSingalR.Client.Contract;
 using BlazorRpcSingalR.Shared;
 using BlazorRpcSingalR.Shared.Contract;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.Extensions.Logging;
-
+ 
 namespace BlazorRpcSingalR.Client.HubConnections
 {
     public abstract class RpcHubConnectionClient<RequestParam, ResponseParam> 
-        : HubConnectionClient<RequestParam> where RequestParam : class, new() where ResponseParam : class
+        : HubConnectionClient<RequestParam>, IRpcHubConnectionClient 
+        where RequestParam : class, new() where ResponseParam : class
     {
         protected RpcHubConnectionClient(Func<HubConnection> hubConnectionFactory,ILogger logger)
             :base(hubConnectionFactory, logger)

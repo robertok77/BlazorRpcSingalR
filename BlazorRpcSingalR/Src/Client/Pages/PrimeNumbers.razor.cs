@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using BlazorRpcSingalR.Client.HubConnections;
+using BlazorRpcSingalR.Client.Contract;
 using BlazorRpcSingalR.Shared.Domain;
 using BlazorRpcSingalR.Shared.Infrastructure.EventAggregator;
 using Microsoft.AspNetCore.Components;
@@ -11,7 +11,7 @@ namespace BlazorRpcSingalR.Client.Pages
     public partial class PrimeNumbers : IHandle<PrimeRet>, IDisposable
     {
         private int[] _primeNumbers = { };
-        [Inject] public PrimeHubConnectionClient PrimeHubConnectionClient { get; set; }
+        [Inject] public IRpcHubConnectionClient PrimeHubConnectionClient { get; set; }
         [Inject] public IEventAggregator EventAggregator { get; set; }
         
         protected override async Task OnInitializedAsync()

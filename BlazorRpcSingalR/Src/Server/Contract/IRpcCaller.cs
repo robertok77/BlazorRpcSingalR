@@ -1,7 +1,7 @@
 ﻿using BlazorRpcSingalR.Shared.Contract;
 using Microsoft.AspNetCore.SignalR;
 
-namespace BlazorRpcSingalR.Server.Hubs
+namespace BlazorRpcSingalR.Server.Contract
 {
     /// <summary>
     /// Generic rpc caller interface 

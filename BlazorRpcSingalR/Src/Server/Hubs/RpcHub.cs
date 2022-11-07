@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BlazorRpcSingalR.Shared;
+using BlazorRpcSingalR.Server.Contract;
 using BlazorRpcSingalR.Shared.Contract;
 using BlazorRpcSingalR.Shared.Infrastructure.EventAggregator;
 using Microsoft.AspNetCore.SignalR;

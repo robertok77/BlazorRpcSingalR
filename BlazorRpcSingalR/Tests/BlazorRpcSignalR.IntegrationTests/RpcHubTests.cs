@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using BlazorRpcSingalR.Client.HubConnections;
 using BlazorRpcSingalR.Server;
@@ -47,8 +48,8 @@ namespace BlazorRpcSignalR.IntegrationTests
             //arrange server
             Func<PrimeNumbersPersistance> primeNumberFactoryFunc = () => new PrimeNumbersPersistance(beginNo, count, primes);
             var primeNumberService = ActivatorUtilities.CreateInstance<PrimeNumberBackgroundService>(server.Services, primeNumberFactoryFunc);
-            await primeHubConnection.StartAsync();
-
+            await primeHubConnection.StartAsync(CancellationToken.None);
+             
             //act
             await primeHubConnection.RegisterUserIdAsync(Guid.NewGuid().ToString()).ConfigureAwait(false);
             await Task.Delay(100);

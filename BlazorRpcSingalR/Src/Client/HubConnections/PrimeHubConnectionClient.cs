@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using BlazorRpcSingalR.Shared.Domain;
 using BlazorRpcSingalR.Shared.Infrastructure.EventAggregator;
 using Microsoft.AspNetCore.SignalR.Client;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 namespace BlazorRpcSingalR.Client.HubConnections
@@ -35,7 +37,5 @@ namespace BlazorRpcSingalR.Client.HubConnections
             await _eventAggregator.PublishOnCurrentThreadAsync(result);
             return result;
         }
-
-
     }
 }

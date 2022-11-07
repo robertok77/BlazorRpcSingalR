@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using BlazorRpcSingalR.Server.Contract;
 using BlazorRpcSingalR.Server.Domain;
 using BlazorRpcSingalR.Server.Hubs;
 using BlazorRpcSingalR.Shared.Contract;
@@ -35,7 +36,7 @@ namespace BlazorRpcSingalR.Server.Services
         {
             return Task.CompletedTask;
         }
-
+         
         public override void Dispose()
         {
             _eventAggregator.Unsubscribe(this);

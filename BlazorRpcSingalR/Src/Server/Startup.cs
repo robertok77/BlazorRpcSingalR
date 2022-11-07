@@ -1,4 +1,5 @@
 using System;
+using BlazorRpcSingalR.Server.Contract;
 using BlazorRpcSingalR.Server.Domain;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -26,7 +27,6 @@ namespace BlazorRpcSingalR.Server
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSignalR();
-            services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddSingleton<IRpcCaller<RpcHub<PrimeParam, PrimeRet>, PrimeParam, PrimeRet>, RpcCaller<RpcHub<PrimeParam, PrimeRet>, PrimeParam, PrimeRet>>();
             services.AddSingleton<IEventAggregator, EventAggregator>();
@@ -57,7 +57,6 @@ namespace BlazorRpcSingalR.Server
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
-                endpoints.MapControllers();
                 endpoints.MapHub<RpcHub<PrimeParam, PrimeRet>>(HubConnectionConst.PrimesNoEndpoint);
                 endpoints.MapFallbackToFile("index.html");
             });
