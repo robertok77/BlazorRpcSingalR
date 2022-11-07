@@ -1,4 +1,4 @@
-# BlazorRpcSingalR
+# Blazor Rpc with SingalR
 
 Sample code for RPC using signalr with blazor webassembly.
 
